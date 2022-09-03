@@ -6,7 +6,7 @@ const morgan = require("morgan")
 const port = process.env.PORT || 5000
 
 // view engine setup 
-app.set("view engine")
+app.set("view engine","ejs")
 app.set("views","views")
 
 // middleware setup 
@@ -22,7 +22,7 @@ app.use(middleware)
 
 app.get("/",(req,res)=> {
 
-    res.send("hello from home page")
+    res.render("pages/auth/signup",{title:"create a new account"})
 })
 
 

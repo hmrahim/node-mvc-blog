@@ -1,11 +1,23 @@
 const { urlencoded } = require("express")
 const express = require("express")
 const app = express()
+const morgan = require("morgan")
 
 const port = process.env.PORT || 5000
 
-app.use(express.json())
-app.use(urlencoded({extended:true}))
+// view engine setup 
+app.set("view engine")
+app.set("views","views")
+
+// middleware setup 
+const middleware = [
+    express.static("public"),
+    express.json(),
+    express.urlencoded({extended:true}),
+    morgan("dev"),  
+]
+
+app.use(middleware)
 
 
 app.get("/",(req,res)=> {

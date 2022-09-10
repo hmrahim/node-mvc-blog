@@ -4,7 +4,7 @@ const Profile = require("./Profile");
 
 const userSchema = new Schema(
   {
-    name: {
+    username: {
       type: String,
       required: true,
       trim: true,
@@ -23,7 +23,7 @@ const userSchema = new Schema(
     },
     profile: {
       type: Schema.Types.ObjectId,
-      ref: Profile,
+      ref: 'Profile',
     },
   },
   {

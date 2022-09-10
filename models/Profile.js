@@ -7,7 +7,13 @@ const profileSchema = new Schema(
   {
     user: {
       type: Schema.Types.ObjectId,
-      ref: User,
+      ref: 'User',
+    },
+    name:{
+      type: String,
+      required: true,
+      trim: true,
+
     },
     title: {
       type: String,
@@ -31,7 +37,7 @@ const profileSchema = new Schema(
     },
     bookmark: {
       type: Schema.Types.ObjectId,
-      ref: Post,
+      ref: 'Post',
     },
   },
   {
